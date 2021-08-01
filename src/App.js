@@ -2,6 +2,7 @@ import { Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Profiles from "./Profiles";
+import HistorySample from "./HistorySample";
 
 export default function App() {
   return (
@@ -17,6 +18,9 @@ export default function App() {
         <li>
           <Link to="/profiles"> Profiles </Link>
         </li>
+        <li>
+          <Link to="/history"> History </Link>
+        </li>
       </ul>
       <hr />
 
@@ -24,6 +28,7 @@ export default function App() {
       <Route path="/" component={Home} exact={true} />
       <Route path="/about" component={About} />
       <Route path="/profiles" component={Profiles} />
+      <Route path="/history" component={HistorySample} />
     </div>
   );
 }
