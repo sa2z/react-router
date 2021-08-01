@@ -1,7 +1,7 @@
 import { Route, Link } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
-import Profile from "./Profile";
+import Profiles from "./Profiles";
 
 export default function App() {
   return (
@@ -14,13 +14,16 @@ export default function App() {
         <li>
           <Link to="/about"> About </Link>
         </li>
+        <li>
+          <Link to="/profiles"> Profiles </Link>
+        </li>
       </ul>
       <hr />
 
       {/* exact={true} 주소가 명확할경우만 표기 */}
       <Route path="/" component={Home} exact={true} />
       <Route path="/about" component={About} />
-      <Route path="/profiles/:username" component={Profile} />
+      <Route path="/profiles" component={Profiles} />
     </div>
   );
 }

@@ -1,8 +1,8 @@
 import React from "react";
 
 const profileData = {
-  hong: {
-    name: "Mr.Hong",
+  velopert: {
+    name: "Mr.Kim",
     description: "Kind man in the world"
   },
   homer: {
