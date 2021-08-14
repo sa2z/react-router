@@ -1,4 +1,4 @@
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import Profiles from "./Profiles";
@@ -25,10 +25,22 @@ export default function App() {
       <hr />
 
       {/* exact={true} 주소가 명확할경우만 표기 */}
-      <Route path="/" component={Home} exact={true} />
-      <Route path="/about" component={About} />
-      <Route path="/profiles" component={Profiles} />
-      <Route path="/history" component={HistorySample} />
+      <Switch>
+        <Route path="/" component={Home} exact={true} />
+        <Route path="/about" component={About} />
+        <Route path="/profiles" component={Profiles} />
+        <Route path="/history" component={HistorySample} />
+        {/* 위 부터 switch 문으로 경로 찾아 들어감, 
+            아래 경로표시없이 작성 시 예외 처리*/}
+        <Route
+          render={({ location }) => (
+            <div>
+              <h2> This page dose not exist </h2>
+              <p>{location.pathname}</p>
+            </div>
+          )}
+        />
+      </Switch>
     </div>
   );
 }
